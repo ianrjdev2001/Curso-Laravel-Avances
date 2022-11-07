@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Curso;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Curso>
@@ -18,9 +19,12 @@ class CursoFactory extends Factory
     protected $model = Curso::class;
     public function definition()
     {
+        $name = $this->faker->sentence();
         return [
-            'name' => $this->faker->sentence(),
-            'descripcion' => $this->faker->paragraph()
+            'name' => $name,
+            'slug' => Str::slug($name,'-'),
+            'descripcion' => $this->faker->paragraph(),
+            'categoria' => $this->faker->randomElement(['Diseño Web', 'Diseño Web'])
         ];
     }
 }
