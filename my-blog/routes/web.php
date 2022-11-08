@@ -15,7 +15,9 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
+
+Route::view('nosotros','nosotros')->name('nosotros');
 
 /*Route::get('/', function () {
     return view('welcome');

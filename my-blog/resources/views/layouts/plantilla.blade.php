@@ -8,6 +8,16 @@
 </head>
 <body>
     <!--header-->
+    <header>
+        <h1>Coders Free</h1>
+        <nav>
+            <ul>
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('cursos.index')}}">Cursos</a></li>
+                <li><a href="{{route('nosotros')}}">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
     <!--nav-->
     @yield('content')
     <!--footer-->
